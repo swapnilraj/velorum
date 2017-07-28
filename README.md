@@ -10,3 +10,4 @@
 * Store messages instead of logging.
 * Inject a view to see stored messeges.
 * Improve the inital wait for document.
+* Add icons.
