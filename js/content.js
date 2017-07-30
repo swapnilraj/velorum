@@ -17,11 +17,8 @@ const eventListener = (event) => {
 };
 
 const saveMessage = (key, message) => {
-  chrome.storage.local.set({[key]: message}, () => {
-    console.log(chrome.storage.local.get(`[${key}]`, (t) => {console.log(t)}));
-    console.log(chrome.storage.local.get())
-    });
-  };
+  chrome.storage.local.set({[key]: message})
+};
 
 setTimeout(() => {
   attachListener();
