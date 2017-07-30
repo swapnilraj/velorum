@@ -1,6 +1,7 @@
 import {
   MESSAGE_SELECTOR,
   MESSAGE_AREA_SELECTOR,
+  USERNAME_SELECTOR,
 } from './constants';
 
 
@@ -11,10 +12,16 @@ const attachListener = () => {
 
 const eventListener = (event) => {
   if (event.target.matches(MESSAGE_SELECTOR)) {
-    console.log(event);
+    saveMessage(document.querySelector(USERNAME_SELECTOR), event.target.innerHTML);
   }
 };
 
+const saveMessage = (key, message) => {
+  chrome.storage.local.set({[key]: message}, () => {
+    console.log(chrome.storage.local.get(`[${key}]`, (t) => {console.log(t)}));
+    console.log(chrome.storage.local.get())
+    });
+  };
 
 setTimeout(() => {
   attachListener();
