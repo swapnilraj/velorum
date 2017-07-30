@@ -1,18 +1,21 @@
-attachListener = () => {
+import {
+  MESSAGE_SELECTOR,
+  MESSAGE_AREA_SELECTOR,
+} from './constants';
 
-    const messages = document.querySelectorAll('._3oh- ._58nk');
-    console.log(messages);
 
-    messages.forEach(message => {
-        message.addEventListener('click', (e) => {
-            console.log(e.target.innerHTML);
-        })
-    });
-
+const attachListener = () => {
+  const messageArea = document.querySelector(MESSAGE_AREA_SELECTOR);
+   messageArea.addEventListener('click', eventListener);
 };
 
+const eventListener = (event) => {
+  if (event.target.matches(MESSAGE_SELECTOR)) {
+    console.log(event);
+  }
+};
+
+
 setTimeout(() => {
-    attachListener();
-    const messageArea = document.querySelector('#js_1');
-    messageArea.addEventListener('load', attachListener);
+  attachListener();
 }, 4000);
