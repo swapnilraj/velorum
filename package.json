@@ -1,0 +1,11 @@
+{
+  "name": "velorum",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:swapnilraj/velorum.git",
+  "author": "Shantanu Raj <s@sraj.me>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^3.4.1"
+  }
+}
