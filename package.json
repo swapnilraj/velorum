@@ -5,7 +5,16 @@
   "repository": "git@github.com:swapnilraj/velorum.git",
   "author": "Shantanu Raj <s@sraj.me>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack -w"
+  },
   "dependencies": {
     "webpack": "^3.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0"
   }
 }
