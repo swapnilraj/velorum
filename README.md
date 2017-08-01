@@ -12,3 +12,4 @@
 * ~~Improve the inital wait for document.~~
 * Add icons.
 * Fix fetching messages on a new conversation.
+* Add Show/Hide button.
