@@ -8,7 +8,7 @@ import awaitElement from './awaitElement';
 
 const eventListener = (event) => {
   if (event.target.matches(MESSAGE_SELECTOR)) {
-    const key = document.querySelector(USERNAME_SELECTOR).innerText;
+    const key = location.pathname;
     const message = event.target.innerHTML;
     saveMessage(key, message);
     getMessage(key, messages => console.log(messages));
