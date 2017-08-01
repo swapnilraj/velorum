@@ -1,4 +1,12 @@
 class VElement {
+  /**
+   *
+   * @param {string} tagName
+   * @param {Array} classList
+   * @param {Object} styles
+   * @param {Object} attributes
+   * @param {HTMLElement[]} childElement
+   */
   constructor(tagName, classList = [], styles = {}, attributes = {}, childElement = []) {
     /**
      * @type {HTMLElement}
@@ -28,7 +36,7 @@ class VElement {
 
   /**
    *
-   * @param {HTMLElement[]} element
+   * @param {HTMLElement[]} elements
    */
   child(elements) {
     elements.forEach(element => {

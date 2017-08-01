@@ -3,7 +3,9 @@ const awaitElement = (selector, timeout = 30000) => {
 
     const limit = Date.now() + timeout;
     const intervalId = setInterval(() => {
-
+      /**
+       * @type {HTMLElement} el
+       */
       const el = document.querySelector(selector);
        if (el) {
          clearInterval(intervalId);
