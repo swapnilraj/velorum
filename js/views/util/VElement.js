@@ -1,5 +1,5 @@
 class VElement {
-  constructor(tagName, classList = [], styles = {}, attributes = {}) {
+  constructor(tagName, classList = [], styles = {}, attributes = {}, childElement = {}) {
     /**
      * @type {HTMLElement}
      */
@@ -7,6 +7,7 @@ class VElement {
     this.applyStyles(styles);
     this.applyAttributes(attributes);
     this.element.classList.add(...classList);
+    this.child(childElement);
   }
 
   /**
