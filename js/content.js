@@ -5,6 +5,7 @@ import {
 } from './constants';
 
 import awaitElement from './awaitElement';
+import injectListView from './views/injectListView';
 
 const eventListener = (event) => {
   if (event.target.matches(MESSAGE_SELECTOR)) {
@@ -30,3 +31,9 @@ const getMessage = (key, callback) => {
 
 awaitElement(BODY_SELECTOR)
   .then(element => element.addEventListener('click', eventListener));
+
+
+getMessage(location.pathname, (messages) => {
+  const props = {title: 'Saved Messages', messages}
+  injectListView(props);
+});
