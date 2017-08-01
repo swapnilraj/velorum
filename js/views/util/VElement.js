@@ -1,5 +1,5 @@
 class VElement {
-  constructor(tagName, classList = [], styles = {}, attributes = {}, childElement = {}) {
+  constructor(tagName, classList = [], styles = {}, attributes = {}, childElement = []) {
     /**
      * @type {HTMLElement}
      */
@@ -28,10 +28,12 @@ class VElement {
 
   /**
    *
-   * @param {HTMLElement} element
+   * @param {HTMLElement[]} element
    */
-  child(element) {
-    this.element.appendChild(element);
+  child(elements) {
+    elements.forEach(element => {
+      this.element.appendChild(element);
+    });
   }
 }
 
