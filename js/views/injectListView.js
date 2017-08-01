@@ -17,7 +17,6 @@ const injectListView = ({
      */
     awaitElement(OPTIONS_SELECTOR)
         .then(element => {
-            console.log(element);
             element.insertAdjacentElement('afterend', listBodyView);
         });
 };
