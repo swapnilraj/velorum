@@ -4,22 +4,29 @@ import {
   USERNAME_SELECTOR,
 } from './constants';
 
-
-const attachListener = () => {
-  const messageArea = document.querySelector(MESSAGE_AREA_SELECTOR);
-   messageArea.addEventListener('click', eventListener);
-};
+import awaitElement from './awaitElement';
 
 const eventListener = (event) => {
   if (event.target.matches(MESSAGE_SELECTOR)) {
-    saveMessage(document.querySelector(USERNAME_SELECTOR), event.target.innerHTML);
+    const key = document.querySelector(USERNAME_SELECTOR).innerText;
+    const message = event.target.innerHTML;
+    saveMessage(key, message);
+    getMessage(key, messages => console.log(messages));
   }
 };
 
 const saveMessage = (key, message) => {
-  chrome.storage.local.set({[key]: message})
+  const storeMessage = (savedMessages) => {
+    savedMessages.push(message);
+    chrome.storage.local.set({ [key]: savedMessages });
+  }
+  getMessage(key, storeMessage);
 };
 
-setTimeout(() => {
-  attachListener();
-}, 4000);
+const getMessage = (key, callback) => {
+  chrome.storage.local.get(key,
+    savedMessages => callback(savedMessages[key] || []));
+};
+
+awaitElement(MESSAGE_AREA_SELECTOR)
+  .then(element => element.addEventListener('click', eventListener));

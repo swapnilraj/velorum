@@ -32,7 +32,6 @@ const manifest = {
     }
   ],
   "permissions": [
-      "activeTab",
       "storage"
   ]
 };
