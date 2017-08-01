@@ -13,8 +13,6 @@ const listContainer = ({ messages }) => {
         return listElement({message});
     });
 
-    debugger;
-
     listContainerView.child(messageListView);
     return listContainerView.element;
 };
