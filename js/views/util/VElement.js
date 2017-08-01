@@ -24,6 +24,14 @@ class VElement {
   applyStyles(element, styles) {
     Object.values(pair => this.element.style[pair[0]] = pair[1]);
   }
+
+  /**
+   *
+   * @param {HTMLElement} element
+   */
+  child(element) {
+    this.element.appendChild(element);
+  }
 }
 
 export default VElement;
