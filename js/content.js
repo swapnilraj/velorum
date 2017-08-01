@@ -1,7 +1,7 @@
 import {
   MESSAGE_SELECTOR,
-  MESSAGE_AREA_SELECTOR,
   USERNAME_SELECTOR,
+  BODY_SELECTOR,
 } from './constants';
 
 import awaitElement from './awaitElement';
@@ -19,7 +19,7 @@ const saveMessage = (key, message) => {
   const storeMessage = (savedMessages) => {
     savedMessages.push(message);
     chrome.storage.local.set({ [key]: savedMessages });
-  }
+  };
   getMessage(key, storeMessage);
 };
 
@@ -28,5 +28,5 @@ const getMessage = (key, callback) => {
     savedMessages => callback(savedMessages[key] || []));
 };
 
-awaitElement(MESSAGE_AREA_SELECTOR)
+awaitElement(BODY_SELECTOR)
   .then(element => element.addEventListener('click', eventListener));
