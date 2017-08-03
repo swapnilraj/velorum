@@ -5,17 +5,24 @@
 'use strict';
 
 const { join } = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const webpack = require('webpack');
+const buildFolder = join(__dirname, 'build');
 
 module.exports = {
   entry: {
     'content': './js/content.js',
   },
   output: {
-    path: join(__dirname, 'build'),
+    path: buildFolder,
     filename: '[name].js',
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: './icons/', to: `${buildFolder}/icons/` },
+    ])
+  ],
   devtool: 'source-map',
   resolve: {
       extensions: ['.webpack.js', '.web.js', '.js', '.json']

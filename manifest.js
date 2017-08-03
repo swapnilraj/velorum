@@ -25,6 +25,15 @@ const manifest = {
   "name": "Velorum",
   "version": version,
   "description": "Saves specified messages on Facebook messenger",
+  "icons": {
+	  "16":  "icons/16.png",
+		"32":  "icons/32.png",
+		"48":  "icons/48.png",
+		"96":  "icons/96.png",
+		"128": "icons/128.png",
+		"192": "icons/192.png",
+		"256": "icons/256.png"
+	},
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
