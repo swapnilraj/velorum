@@ -8,9 +8,7 @@ import {
 const listContainer = ({ messages }) => {
     const listContainerView = new VElement('div', LIST_CONTAINER_CLASS);
 
-    const messageListView = messages.map( message => {
-        return listElement({message});
-    });
+    const messageListView = messages.map(message => (listElement({message})));
 
     listContainerView.child(messageListView);
     return listContainerView.element;
