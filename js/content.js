@@ -23,13 +23,18 @@ const eventListener = (event) => {
 };
 
 const loadView = () => {
-  getMessage(location.pathname, (messages) => {
-        const props = {title: 'Starred Messages', messages}
-        injectListView(props);
-      });
+  setTimeout(() => {
+    getMessage(location.pathname, (messages) => {
+    console.log(messages);
+    const props = {title: 'Starred Messages', messages}
+    injectListView(props);
+  })}, 1);
 };
 
 awaitElement(BODY_SELECTOR)
   .then(element => element.addEventListener('click', eventListener));
+
+awaitElement(NAV_SELECTOR)
+  .then(element => element.addEventListener('click', loadView));
 
 loadView();

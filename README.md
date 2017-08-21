@@ -11,5 +11,6 @@
 * ~~Inject a view to see stored messeges.~~
 * ~~Improve the inital wait for document.~~
 * ~~Add icons.~~
-* Fix fetching messages on a new conversation.
+* ~~Fix fetching messages on a new conversation.~~
+* Fix view injection on new message load.
 * Add Show/Hide button.
