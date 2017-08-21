@@ -4,6 +4,7 @@ import {
   BODY_SELECTOR,
   CONVERSATION_TITEL_SELECTOR,
   NAV_SELECTOR,
+  STARRED_SELECTOR,
 } from './utils/constants';
 
 import {
@@ -25,16 +26,21 @@ const eventListener = (event) => {
 const loadView = () => {
   setTimeout(() => {
     getMessage(location.pathname, (messages) => {
-    console.log(messages);
     const props = {title: 'Starred Messages', messages}
     injectListView(props);
-  })}, 1);
+  })}, 0)
+};
+
+const reloadView = () => {
+  awaitElement(STARRED_SELECTOR)
+    .then(element =>  element.parentNode.removeChild(element))
+    .then(loadView);
 };
 
 awaitElement(BODY_SELECTOR)
   .then(element => element.addEventListener('click', eventListener));
 
 awaitElement(NAV_SELECTOR)
-  .then(element => element.addEventListener('click', loadView));
+  .then(element => element.addEventListener('click', reloadView));
 
 loadView();
