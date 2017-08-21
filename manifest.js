@@ -24,7 +24,7 @@ const manifest = {
   "manifest_version": 2,
   "name": "Velorum",
   "version": version,
-  "description": "Saves specified messages on Facebook messenger.\nIcons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY",
+  "description": "Saves specified messages on Facebook messenger.",
   "icons": {
 	  "16":  "icons/16.png",
 		"32":  "icons/32.png",
