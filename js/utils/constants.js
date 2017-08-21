@@ -3,6 +3,7 @@ export const MESSAGE_AREA_SELECTOR = '#js_1';
 export const USERNAME_SELECTOR = '#js_4 > div._1jt6 > div._2jnq > div._2jnt > div._3eur > span';
 export const BODY_SELECTOR = 'body';
 export const OPTIONS_SELECTOR = '#js_4 > div:nth-child(3)';
+export const NAV_SELECTOR = 'div[role="navigation"]';
 
 /**
  * Classes for List body
@@ -17,7 +18,13 @@ export const LIST_TITLE_CLASS = ['_1lj0'];
 export const LIST_CONTAINER_CLASS = ['_1li_'];
 
 /**
+ * Classes for three dot menu
+ */
+export const MENU_DIV_CLASS = ['_150g', 'uiPopover', '_6a', '_6b'];
+export const MENU_ANCHOR_CLASS = [];
+
+/**
  * Classes for list elements
  */
 export const LIST_ELEMENT_CONTAINER_CLASS = ['_3szn', '_3szo'];
-export const LIST_ELEMENT_CLASS = ['_3szq'];
+export const LIST_ELEMENT_CLASS = ['_3oh-', '_58nk'];

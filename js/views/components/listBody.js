@@ -5,7 +5,7 @@ import {
     LIST_BODY_CLASS,
     LIST_LINE_BREAK_CLASS,
     LIST_TITLE_CLASS,
-} from '../../constants';
+} from '../../utils/constants';
 
 const listBody = ({ title, messages}) => {
 

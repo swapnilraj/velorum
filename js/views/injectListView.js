@@ -1,9 +1,9 @@
 import listBody from './components/listBody';
 import {
     OPTIONS_SELECTOR,
-} from '../constants';
+} from '../utils/constants';
 
-import awaitElement from '../awaitElement';
+import awaitElement from '../utils/awaitElement';
 
 const injectListView = ({
     title,

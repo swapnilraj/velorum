@@ -3,7 +3,7 @@ import listElement from './listElement';
 
 import {
     LIST_CONTAINER_CLASS,
-} from '../../constants';
+} from '../../utils/constants';
 
 const listContainer = ({ messages }) => {
     const listContainerView = new VElement('div', LIST_CONTAINER_CLASS);

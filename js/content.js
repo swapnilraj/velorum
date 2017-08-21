@@ -3,9 +3,15 @@ import {
   USERNAME_SELECTOR,
   BODY_SELECTOR,
   CONVERSATION_TITEL_SELECTOR,
-} from './constants';
+  NAV_SELECTOR,
+} from './utils/constants';
 
-import awaitElement from './awaitElement';
+import {
+  getMessage,
+  saveMessage,
+} from './utils/storageAPI'
+
+import awaitElement from './utils/awaitElement';
 import injectListView from './views/injectListView';
 
 const eventListener = (event) => {
@@ -13,26 +19,12 @@ const eventListener = (event) => {
     const key = location.pathname;
     const message = event.target.innerHTML;
     saveMessage(key, message);
-    getMessage(key, messages => console.log(messages));
   }
-};
-
-const saveMessage = (key, message) => {
-  const storeMessage = (savedMessages) => {
-    savedMessages.push(message);
-    chrome.storage.local.set({ [key]: savedMessages });
-  };
-  getMessage(key, storeMessage);
-};
-
-const getMessage = (key, callback) => {
-  chrome.storage.local.get(key,
-    savedMessages => callback(savedMessages[key] || []));
 };
 
 const loadView = () => {
   getMessage(location.pathname, (messages) => {
-        const props = {title: 'Saved Messages', messages}
+        const props = {title: 'Starred Messages', messages}
         injectListView(props);
       });
 };

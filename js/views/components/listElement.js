@@ -4,7 +4,7 @@ import VElement from '../util/VElement';
 import {
     LIST_ELEMENT_CONTAINER_CLASS,
     LIST_ELEMENT_CLASS,
-} from '../../constants';
+} from '../../utils/constants';
 
 const listElement = ({ message }) => {
 
