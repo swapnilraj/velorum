@@ -12,5 +12,5 @@
 * ~~Improve the inital wait for document.~~
 * ~~Add icons.~~
 * ~~Fix fetching messages on a new conversation.~~
-* Fix view injection on new message load.
+* ~~Fix view injection on new message load.~~
 * Add Show/Hide button.
