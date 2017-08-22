@@ -13,8 +13,12 @@ import {
   setOnChanged,
 } from './utils/storageAPI'
 
+import listBody from './views/components/listBody'
 import awaitElement from './utils/awaitElement';
-import injectListView from './views/injectListView';
+import {
+  injectListView,
+  replaceListView,
+} from './views/ListView';
 
 const eventListener = (event) => {
   if (event.target.matches(MESSAGE_SELECTOR) || event.target.parentElement.matches(MESSAGE_SELECTOR)) {
@@ -28,22 +32,22 @@ const loadView = () => {
   setTimeout(() => {
     getMessage(location.pathname, (messages) => {
     const props = {title: 'Starred Messages', messages}
-    injectListView(props);
+    injectListView(listBody(props));
   })}, 0)
 };
 
 const reloadView = () => {
-  awaitElement(STAR_ID)
-    .then(element =>  element.parentNode.removeChild(element))
-    .then(loadView);
+  setTimeout(() => {
+    getMessage(location.pathname, (messages) => {
+    const props = {title: 'Starred Messages', messages}
+    replaceListView(listBody(props));
+  })}, 0)
 };
-
-setOnChanged(reloadView);
 
 awaitElement(BODY_SELECTOR)
   .then(element => element.addEventListener('click', eventListener));
 
 awaitElement(NAV_SELECTOR)
   .then(element => element.addEventListener('click', reloadView));
-
+setOnChanged(reloadView);
 loadView();
