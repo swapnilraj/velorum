@@ -14,3 +14,7 @@ export const getMessage = (key, callback) => {
   chrome.storage.local.get(key,
     savedMessages => callback(savedMessages[key] || []));
 };
+
+export const setOnChanged = (listener) => {
+  chrome.storage.onChanged.addListener(listener);
+}

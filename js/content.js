@@ -10,6 +10,7 @@ import {
 import {
   getMessage,
   saveMessage,
+  setOnChanged,
 } from './utils/storageAPI'
 
 import awaitElement from './utils/awaitElement';
@@ -36,6 +37,8 @@ const reloadView = () => {
     .then(element =>  element.parentNode.removeChild(element))
     .then(loadView);
 };
+
+setOnChanged(reloadView);
 
 awaitElement(BODY_SELECTOR)
   .then(element => element.addEventListener('click', eventListener));
