@@ -5,6 +5,7 @@ import {
     LIST_BODY_CLASS,
     LIST_LINE_BREAK_CLASS,
     LIST_TITLE_CLASS,
+    STAR_ID,
 } from '../../utils/constants';
 
 const listBody = ({ title, messages}) => {
@@ -22,6 +23,8 @@ const listBody = ({ title, messages}) => {
     listBodyView.child([lineBreak.element]);
     listBodyView.child([listTitle.element]);
     listBodyView.child([listContainerView]);
+
+    listBodyView.element.id = STAR_ID.substring(1);
 
     return listBodyView.element;
 };

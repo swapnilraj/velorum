@@ -5,6 +5,7 @@ export const BODY_SELECTOR = 'body';
 export const OPTIONS_SELECTOR = '#js_4 > div:nth-child(3)';
 export const NAV_SELECTOR = 'div[role="navigation"]';
 export const STARRED_SELECTOR = '#js_4 > div:nth-child(4)';
+export const STAR_ID = '#starred';
 
 /**
  * Classes for List body

@@ -4,7 +4,7 @@ import {
   BODY_SELECTOR,
   CONVERSATION_TITEL_SELECTOR,
   NAV_SELECTOR,
-  STARRED_SELECTOR,
+  STAR_ID,
 } from './utils/constants';
 
 import {
@@ -33,7 +33,7 @@ const loadView = () => {
 };
 
 const reloadView = () => {
-  awaitElement(STARRED_SELECTOR)
+  awaitElement(STAR_ID)
     .then(element =>  element.parentNode.removeChild(element))
     .then(loadView);
 };
