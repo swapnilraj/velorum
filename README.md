@@ -13,4 +13,5 @@
 * ~~Add icons.~~
 * ~~Fix fetching messages on a new conversation.~~
 * ~~Fix view injection on new message load.~~
+* ~~Fix view injection on new message saved.~~
 * Add Show/Hide button.
