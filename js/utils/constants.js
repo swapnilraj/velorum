@@ -30,3 +30,8 @@ export const MENU_ANCHOR_CLASS = [];
  */
 export const LIST_ELEMENT_CONTAINER_CLASS = ['_3szn', '_3szo'];
 export const LIST_ELEMENT_CLASS = ['_3oh-', '_58nk'];
+
+/**
+ * Split axis for pathname
+ */
+export const REG_EX_KEY = /(\/t\/.*)/g;

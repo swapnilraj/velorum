@@ -36,7 +36,10 @@ const manifest = {
 	},
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "*://www.messenger.com/*",
+        "*://www.facebook.com/messages/*",
+      ],
       "js": ["./content.js"]
     }
   ],

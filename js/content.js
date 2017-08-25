@@ -5,6 +5,7 @@ import {
   CONVERSATION_TITEL_SELECTOR,
   NAV_SELECTOR,
   STAR_ID,
+  REG_EX_KEY,
 } from './utils/constants';
 
 import {
@@ -20,9 +21,11 @@ import {
   replaceListView,
 } from './views/ListView';
 
+const normalizeKey = path => path.match(REG_EX_KEY)[0];
+
 const eventListener = (event) => {
   if (event.target.matches(MESSAGE_SELECTOR) || event.target.parentElement.matches(MESSAGE_SELECTOR)) {
-    const key = location.pathname;
+    const key = normalizeKey(location.pathname);
     const message = event.target.innerHTML;
     saveMessage(key, message);
   }
@@ -30,7 +33,7 @@ const eventListener = (event) => {
 
 const loadView = () => {
   setTimeout(() => {
-    getMessage(location.pathname, (messages) => {
+    getMessage(normalizeKey(location.pathname), (messages) => {
     const props = {title: 'Starred Messages', messages}
     injectListView(listBody(props));
   })}, 0)
@@ -38,7 +41,7 @@ const loadView = () => {
 
 const reloadView = () => {
   setTimeout(() => {
-    getMessage(location.pathname, (messages) => {
+    getMessage(normalizeKey(location.pathname), (messages) => {
     const props = {title: 'Starred Messages', messages}
     replaceListView(listBody(props));
   })}, 0)
