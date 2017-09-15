@@ -14,4 +14,6 @@
 * ~~Fix fetching messages on a new conversation.~~
 * ~~Fix view injection on new message load.~~
 * ~~Fix view injection on new message saved.~~
+* ~~Replace local storage with sync storage.~~
+* Use hyperscript.
 * Add Show/Hide button.

@@ -1,17 +1,17 @@
 /**
- * Abstraction layer for Chrome local storage
+ * Abstraction layer for Chrome sync storage
  */
 
 export const saveMessage = (key, message) => {
   const storeMessage = (savedMessages) => {
     savedMessages.push(message);
-    chrome.storage.local.set({ [key]: savedMessages });
+    chrome.storage.sync.set({ [key]: savedMessages });
   };
   getMessage(key, storeMessage);
 };
 
 export const getMessage = (key, callback) => {
-  chrome.storage.local.get(key,
+  chrome.storage.sync.get(key,
     savedMessages => callback(savedMessages[key] || []));
 };
 
